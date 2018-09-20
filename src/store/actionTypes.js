@@ -1,0 +1,2 @@
+export const JANOSH_SETUP = 'JANOSH_SETUP'
+export const JANOSH_LOGIN = 'JANOSH_LOGIN'
