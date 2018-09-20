@@ -1,6 +1,6 @@
-# texttinder frontend
+# LiebtDichVue
 
-> Like Tinder, but with text. (frontend)
+> Like Tinder, but with text. (Vue.js frontend)
 
 ## Build Setup
 
