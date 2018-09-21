@@ -6,7 +6,11 @@ import * as mutationTypes from '../mutationTypes'
 import { log } from '@/utils.js'
 
 const state = {
-  ready: false
+  ready: false,
+  quote: false,
+  conversations: false,
+  selectedConversation: false,
+  account: false
 }
 
 const getters = {
@@ -21,6 +25,22 @@ const actions = {
 
     Vue.janosh.subscribe('notify', (value) => {
       commit(mutationTypes.NOTIFY, value)
+    })
+
+    Vue.janosh.subscribe('quote', (value) => {
+      commit(mutationTypes.JANOSH_UPDATE_STATE, { key: 'quote', value })
+    })
+
+    Vue.janosh.subscribe('conversation', (value) => {
+      commit(mutationTypes.JANOSH_UPDATE_STATE, { key: 'selectedConversation', value })
+    })
+
+    Vue.janosh.subscribe('conversations', (value) => {
+      commit(mutationTypes.JANOSH_UPDATE_STATE, { key: 'conversations', value })
+    })
+
+    Vue.janosh.subscribe('account', (value) => {
+      commit(mutationTypes.JANOSH_UPDATE_STATE, { key: 'account', value })
     })
 
     Vue.janosh.onReceive((value) => {
@@ -73,6 +93,12 @@ const actions = {
 const mutations = {
   [mutationTypes.JANOSH_READY] (state, ready) {
     state.ready = ready
+  },
+  [mutationTypes.JANOSH_UPDATE_STATE] (state, data) {
+    state[data.key] = JSON.parse(data.value)
+  },
+  [mutationTypes.JANOSH_CLEAR_STATE] (state, key) {
+    state[key] = false
   }
 }
 

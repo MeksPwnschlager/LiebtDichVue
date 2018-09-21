@@ -6,7 +6,6 @@ const sourceMapEnabled = isProduction
   ? config.build.productionSourceMap
   : config.dev.cssSourceMap
 
-
 module.exports = {
   loaders: utils.cssLoaders({
     sourceMap: sourceMapEnabled,
@@ -17,6 +16,7 @@ module.exports = {
     video: 'src',
     source: 'src',
     img: 'src',
+    vector: 'src',
     image: 'xlink:href'
   }
 }

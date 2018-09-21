@@ -50,7 +50,11 @@ module.exports = {
         include: [resolve('src'), resolve('test')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.svg$/,
+        loader: 'svg-inline-loader?classPrefix'
+      },
+      {
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,

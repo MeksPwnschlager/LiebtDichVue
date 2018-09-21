@@ -7,14 +7,25 @@ import store from './store'
 
 import VueJanosh from 'vue-janosh'
 import VueLocalStorage from 'vue-localstorage'
+import Vuetify from 'vuetify'
+
+import Vector from '@/components/global/Vector'
 
 Vue.config.productionTip = false
 
+// Global Components
+Vue.component('vector', Vector)
+
+// Plugins
 Vue.use(VueJanosh, {
   socketUri: 'wss://liebt-dich.org:10000'
 })
 
 Vue.use(VueLocalStorage)
+
+Vue.use(Vuetify)
+
+Vue.use(require('vue-moment'))
 
 /* eslint-disable no-new */
 

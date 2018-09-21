@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Register from '@/components/Register'
-import Login from '@/components/Login'
-import Swipe from '@/components/Swipe'
-import DevTools from '@/components/DevTools'
-import HelloWorld from '@/components/HelloWorld'
-
+import Register from '@/components/Register.vue'
+import Login from '@/components/Login.vue'
+import Account from '@/components/Account.vue'
+import ConversationList from '@/components/ConversationList.vue'
+import Conversation from '@/components/Conversation.vue'
+import Swipe from '@/components/Swipe.vue'
+import DevTools from '@/components/DevTools.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -25,6 +27,21 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/account',
+      name: 'Account',
+      component: Account
+    },
+    {
+      path: '/conversations',
+      name: 'ConversationList',
+      component: ConversationList
+    },
+    {
+      path: '/conversation/:other',
+      name: 'Conversation',
+      component: Conversation
     },
     {
       path: '/swipe',

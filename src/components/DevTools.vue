@@ -1,8 +1,21 @@
 <template>
   <div>
-    <button type="button" @click="janoshSendSomething()">Send Something</button>
-    </br>
     <button type="button" @click="notifyUi()">Notify UI</button>
+    </br>
+    </br>
+    <input
+      type="text"
+      placeholder="Command"
+      v-model="command"></br>
+    <input
+      type="text"
+      placeholder="Key"
+      v-model="key"></br>
+    <input
+      type="text"
+      placeholder="Value"
+      v-model="value"></br>
+    <button type="button" @click="sendCommand()">Send to Janosh</button>
   </div>
 </template>
 
@@ -14,13 +27,20 @@ import { log } from '@/utils.js'
 export default {
   name: 'DevTools',
   mixins: [sessionMixin],
+  data () {
+    return {
+      command: 'something',
+      key: '',
+      value: ''
+    }
+  },
   methods: {
-    janoshSendSomething () {
-      log.debug('Sending something')
-      this.$janosh.send('publish', 'something', 'something')
-    },
     notifyUi () {
       this.$store.commit(mutationTypes.NOTIFY, 'Test Notification')
+    },
+    sendCommand () {
+      log.info('JANOSH', `Sending command: ${this.command}, ${this.key}, ${this.value}`)
+      this.$janosh.send(this.command, this.key, this.value)
     }
   }
 }

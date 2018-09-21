@@ -1,18 +1,27 @@
 <template>
-  <div v-if="this.$store.state.janosh.ready" id="app">
+  <div id="app">
     <NotificationBar></NotificationBar>
-    <router-view/>
+    <LoadingScreen :data="ready">
+      <router-view/>
+    </LoadingScreen>
+    <NavigationBar></NavigationBar>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import NotificationBar from '@/components/NotificationBar.vue'
+import NavigationBar from '@/components/NavigationBar.vue'
+import LoadingScreen from '@/components/LoadingScreen.vue'
 import * as actionTypes from '@/store/actionTypes'
 
 export default {
   name: 'app',
-  components: { NotificationBar },
-  methods: {
+  components: { NotificationBar, NavigationBar, LoadingScreen },
+  computed: {
+    ...mapState({
+      ready: (state) => state.janosh.ready
+    })
   },
   mounted () {
     this.$store.dispatch(actionTypes.JANOSH_SETUP)
@@ -28,5 +37,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
