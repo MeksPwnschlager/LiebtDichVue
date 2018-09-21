@@ -1,5 +1,5 @@
 <template>
-  <LoadingScreen :data="account">
+  <LoadingScreen id="account" :data="account">
     <span>E-Mail Address: </span><span>{{ account.email }}</span></br>
     <span>Name: </span><span>{{ account.name }}</span></br>
     <span>Gender: </span><span>{{ account.gender }}</span></br>

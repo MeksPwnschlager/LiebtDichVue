@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LoadingScreen :data="quote">
+    <LoadingScreen id="swipe" :data="quote">
       <span>"{{ quote.quote }}"</span> <br>
       <span>by </span><span>{{ quote.name }}</span>
     </LoadingScreen>

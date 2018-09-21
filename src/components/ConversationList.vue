@@ -1,5 +1,5 @@
 <template>
-  <LoadingScreen :data="conversations">
+  <LoadingScreen id="conversation-list" :data="conversations">
     <ConversationPreview
       v-for="conversation in Object.values(conversations)"
       :key="conversation.other"

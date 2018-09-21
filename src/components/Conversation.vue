@@ -1,5 +1,5 @@
 <template>
-  <LoadingScreen :data="conversation">
+  <LoadingScreen id="conversation" :data="conversation">
     <Message
       v-for="(message, index) in conversation.messages"
       :key="index"
