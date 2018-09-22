@@ -1,5 +1,6 @@
 <template>
   <v-bottom-nav
+    app
     id="nav-bar"
     :active.sync="route"
     :value="true"

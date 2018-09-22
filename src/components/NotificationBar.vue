@@ -1,7 +1,17 @@
 <template>
-  <div v-show="show" id="notification-bar">
-    <span>{{ notification.message }}</span>
-  </div>
+  <v-snackbar
+    v-model="show"
+    :multi-line="false"
+    :timeout="2000"
+    :top="true">
+      {{ notification.message }}
+      <v-btn
+        color="teal"
+        flat
+        @click="show = false">
+        Close
+      </v-btn>
+  </v-snackbar>
 </template>
 
 <script>
@@ -19,9 +29,6 @@ export default {
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === mutationTypes.NOTIFY) {
         this.show = true
-        setTimeout(() => {
-          this.show = false
-        }, 1000)
       }
     })
   },

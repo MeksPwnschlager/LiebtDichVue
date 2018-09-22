@@ -1,11 +1,21 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <NotificationBar></NotificationBar>
-    <LoadingScreen :data="ready">
-      <router-view/>
-    </LoadingScreen>
+    <v-content>
+      <v-container
+      fill-height
+      justify-center>
+      <v-layout row >
+        <v-flex xs12>
+          <LoadingScreen :data="ready">
+            <router-view/>
+          </LoadingScreen>
+        </v-flex>
+      </v-layout>
+      </v-container>
+    </v-content>
     <NavigationBar></NavigationBar>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -31,16 +41,14 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+}
+.container {
+  background: white;
 }
 </style>

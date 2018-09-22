@@ -1,32 +1,61 @@
 <template>
-  <div>
-    <div>
-      <span>{{ conversation.other }}</span> <br>
-      <span v-if="!empty">{{ lastSender }}</span><span>: {{ lastMessage.text }} </span><span> {{ lastDate | moment("from", "now") }}</span>
-    </div>
-  </div>
+  <v-card flat>
+    <v-list-tile
+      :key="conversation.other"
+      avatar
+      ripple
+      :to="`/conversation/${conversation.other}`">
+
+      <v-list-tile-content>
+        <v-list-tile-title>
+          {{ conversation.other }}
+        </v-list-tile-title>
+        <div v-if="!empty">
+          <v-list-tile-sub-title
+            class="text--primary">
+            {{ lastMessageInfoString }}
+          </v-list-tile-sub-title>
+          <v-list-tile-sub-title>
+            {{ lastMessage.text }}
+          </v-list-tile-sub-title>
+        </div>
+      </v-list-tile-content>
+    </v-list-tile>
+    <v-divider
+      v-if="!last"
+      :key="index">
+    </v-divider>
+  </v-card>
 </template>
 
 <script>
 export default {
   name: 'ConversationPreview',
   props: {
-    conversation: Object
+    conversation: Object,
+    index: Number,
+    last: Boolean
   },
   computed: {
     lastMessage () {
-      let msgs = this.conversation.messages
+      const msgs = this.conversation.messages
       return msgs[msgs.length - 1]
     },
     lastDate () {
       return new Date(0).setUTCMilliseconds(this.lastMessage.epoch)
     },
     lastSender () {
-      let other = this.conversation.other
+      const other = this.conversation.other
       return this.lastMessage.recipient === other ? 'You' : other
     },
+    lastMessageInfoString () {
+      const timestamp = this.$moment(this.lastDate).fromNow()
+      const sender = this.lastSender
+      return `${sender}, ${timestamp}`
+    },
     empty () {
-      return this.conversation.messages.length === 0
+      const msgs = this.conversation.messages
+      return !msgs || msgs.length === 0
     }
   }
 }

@@ -1,29 +1,34 @@
 <template>
-  <LoadingScreen id="conversation-list" :data="conversations">
-    <ConversationPreview
-      v-for="conversation in Object.values(conversations)"
-      :key="conversation.other"
-      :conversation="conversation">
-    </ConversationPreview>
+  <LoadingScreen id="conversation-list" :data="conversationsObject">
+    <v-list two-line height="100%">
+      <ConversationPreview
+        v-for="(conversation, index) in conversations"
+        :conversation="conversation"
+        :key="index"
+        :index="index"
+        :last="index + 1 === conversations.length">
+      </ConversationPreview>
+    </v-list>
   </LoadingScreen>
 </template>
 
 <script>
-import sessionMixin from '@/mixins/session.js'
 import LoadingScreen from '@/components/LoadingScreen.vue'
 import ConversationPreview from '@/components/ConversationPreview.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'ConversationList',
-  mixins: [sessionMixin],
   components: { LoadingScreen, ConversationPreview },
   created () {
     this.$janosh.send('Conversations')
   },
   computed: {
+    conversations () {
+      return Object.values(this.conversationsObject)
+    },
     ...mapState({
-      conversations: (state) => state.janosh.conversations
+      conversationsObject: (state) => state.janosh.conversations
     })
   },
   methods: {

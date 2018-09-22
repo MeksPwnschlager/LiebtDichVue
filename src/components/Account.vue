@@ -9,13 +9,11 @@
 </template>
 
 <script>
-import sessionMixin from '@/mixins/session.js'
 import LoadingScreen from '@/components/LoadingScreen.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Account',
-  mixins: [sessionMixin],
   components: { LoadingScreen },
   created () {
     this.$janosh.send('Account')

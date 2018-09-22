@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import sessionMixin from '@/mixins/session.js'
 import LoadingScreen from '@/components/LoadingScreen.vue'
 import Message from '@/components/Message.vue'
 import * as mutationTypes from '@/store/mutationTypes.js'
@@ -18,7 +17,6 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'Conversation',
-  mixins: [sessionMixin],
   components: { LoadingScreen, Message },
   created () {
     this.$store.commit(mutationTypes.JANOSH_CLEAR_STATE, 'selectedConversation')
