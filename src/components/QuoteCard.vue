@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card class="pa-4"color="yellow lighten-3" >
-      <v-responsive max-height="60vh" :aspect-ratio="1">
+      <v-responsive max-height="60vh" :aspect-ratio="1.2">
         <LoadingScreen :data="quote">
           <v-layout id="quote" column justify-space-between fill-height>
             <div>
@@ -39,6 +39,7 @@ export default {
 }
 .blockquote {
   font-size: 24px;
+  padding: 0;
 }
 .by-line {
   font-weight: 400;

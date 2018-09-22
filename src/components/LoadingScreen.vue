@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-screen">
+  <v-layout fill-height class="loading-screen">
     <slot v-if="data"></slot>
     <div v-else>
       <v-progress-circular
@@ -7,7 +7,7 @@
         color="teal">
       </v-progress-circular>
     </div>
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -19,7 +19,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.loading-screen {
-  height: 100%;
-}
 </style>

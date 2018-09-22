@@ -5,8 +5,8 @@
       <v-container
       fill-height
       justify-center>
-      <v-layout row >
-        <v-flex xs12>
+      <v-layout row>
+        <v-flex offset-xs3 xs6>
           <LoadingScreen :data="ready">
             <router-view/>
           </LoadingScreen>

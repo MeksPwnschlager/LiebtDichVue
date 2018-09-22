@@ -1,13 +1,18 @@
 <template>
-  <v-layout class="mt-5">
-    <v-flex offset-xs3 xs6>
-      <QuoteCard :quote="quote" byLine="true"></QuoteCard>
-      <div class="mt-4">
+    <v-layout
+      fill-height
+      column>
+      <v-flex xs2></v-flex>
+
+      <v-flex xs7>
+        <QuoteCard :quote="quote" byLine="true"></QuoteCard>
+      </v-flex>
+      <v-flex xs2 class="mt-4">
         <v-btn class="white--text" right color="green" @click="nextQuote()">MESSAGE</v-btn>
         <v-btn left @click="nextQuote()">NEXT</v-btn>
-      </div>
-    </v-flex>
-  </v-layout>
+      </v-flex>
+      <v-flex xs1></v-flex>
+    </v-layout>
 </template>
 
 <script>
