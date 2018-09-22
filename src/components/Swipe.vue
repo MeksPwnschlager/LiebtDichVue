@@ -4,7 +4,7 @@
       <QuoteCard :quote="quote" byLine="true"></QuoteCard>
       <div class="mt-4">
         <v-btn class="white--text" right color="green" @click="nextQuote()">MESSAGE</v-btn>
-        <v-btn class="white--text" left color="blue" @click="nextQuote()">NEXT</v-btn>
+        <v-btn left @click="nextQuote()">NEXT</v-btn>
       </div>
     </v-flex>
   </v-layout>

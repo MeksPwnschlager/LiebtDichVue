@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div v-if="data">
-      <slot></slot>
-    </div>
+  <div class="loading-screen">
+    <slot v-if="data"></slot>
     <div v-else>
       <v-progress-circular
         indeterminate
@@ -21,4 +19,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.loading-screen {
+  height: 100%;
+}
 </style>
