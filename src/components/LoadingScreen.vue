@@ -4,7 +4,10 @@
       <slot></slot>
     </div>
     <div v-else>
-      <span>Insert loading animation here.</span>
+      <v-progress-circular
+        indeterminate
+        color="teal">
+      </v-progress-circular>
     </div>
   </div>
 </template>

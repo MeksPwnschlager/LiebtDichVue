@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <LoadingScreen id="swipe" :data="quote">
-      <span>"{{ quote.quote }}"</span> <br>
-      <span>by </span><span>{{ quote.name }}</span>
-    </LoadingScreen>
-    <button type="button" @click="nextQuote()">Next Quote</button>
-  </div>
+  <v-layout class="mt-5">
+    <v-flex offset-xs3 xs6>
+      <QuoteCard :quote="quote" byLine="true"></QuoteCard>
+      <div class="mt-4">
+        <v-btn class="white--text" right color="green" @click="nextQuote()">MESSAGE</v-btn>
+        <v-btn class="white--text" left color="blue" @click="nextQuote()">NEXT</v-btn>
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-import LoadingScreen from '@/components/LoadingScreen.vue'
+import QuoteCard from '@/components/QuoteCard.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Swipe',
-  components: { LoadingScreen },
+  components: { QuoteCard },
   created () {
     this.nextQuote()
   },
