@@ -1,9 +1,22 @@
 <template>
   <LoadingScreen id="account" :data="account">
-    <span>E-Mail Address: </span><span>{{ account.email }}</span></br>
-    <span>Name: </span><span>{{ account.name }}</span></br>
-    <span>Gender: </span><span>{{ account.gender }}</span></br>
-    <QuoteCard :quote="account"></QuoteCard>
+    <v-layout column>
+      <div class="mt-2">
+        <span class="title">E-Mail Address: </span></br>
+        <span class="subheading">{{ account.email }}</span><br />
+      </div>
+      <div class="mt-2">
+        <span class="title">Name: </span><br />
+        <span class="subheading">{{ account.name }}</span><br />
+      </div>
+      <div class="mt-2">
+        <span class="title">Gender: </span><br />
+        <span class="subheading">{{ account.gender }}</span>
+      </div>
+      <div class="mt-5">
+        <QuoteCard :quote="account"></QuoteCard>
+      </div>
+    </v-layout>
   </LoadingScreen>
 </template>
 

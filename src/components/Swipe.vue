@@ -2,16 +2,13 @@
     <v-layout
       fill-height
       column>
-      <v-flex xs2></v-flex>
-
-      <v-flex xs7>
+      <div class="mt-5">
         <QuoteCard :quote="quote" byLine="true"></QuoteCard>
-      </v-flex>
-      <v-flex xs2 class="mt-4">
+      </div>
+      <div class="mt-4">
         <v-btn class="white--text" right color="green" @click="nextQuote()">MESSAGE</v-btn>
         <v-btn left @click="nextQuote()">NEXT</v-btn>
-      </v-flex>
-      <v-flex xs1></v-flex>
+      </div>
     </v-layout>
 </template>
 

@@ -3,13 +3,13 @@
     <v-card class="pa-4"color="yellow lighten-3" >
       <v-responsive max-height="60vh" :aspect-ratio="1.2">
         <LoadingScreen :data="quote">
-          <v-layout id="quote" column justify-space-between fill-height>
-            <div>
+          <v-layout column justify-space-between fill-height>
+            <v-layout column justify-center fill-height>
               <span
                 class="blockquote">
                 {{ quote.quote }}
               </span>
-            </div>
+            </v-layout>
             <div v-if="byLine" class="blockquote">
               <span>by </span><span class="by-line">{{ quote.name }}</span>
             </div>
