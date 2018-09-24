@@ -53,4 +53,8 @@ export default {
 #messages {
   overflow-y: scroll;
 }
+#messages {
+  display: block;
+} 
+
 </style>
