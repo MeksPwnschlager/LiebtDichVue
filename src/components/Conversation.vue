@@ -1,5 +1,7 @@
 <template>
   <LoadingScreen id="conversation" :data="conversation">
+    <v-layout column>
+
     <v-layout id="messages" column justify-end>
       <Message
         v-for="(message, index) in conversation.messages"
@@ -9,6 +11,7 @@
       </Message>
     </v-layout>
     <SendMessage class="mt-2" @send="sendMessage"></SendMessage>
+    </v-layout>
   </LoadingScreen>
 </template>
 
@@ -47,14 +50,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#conversation {
-  display: flex;
-}
 #messages {
   overflow-y: scroll;
-}
-#messages {
   display: block;
-} 
-
+}
 </style>

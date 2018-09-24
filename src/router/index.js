@@ -39,7 +39,7 @@ export default new Router({
       component: ConversationList
     },
     {
-      path: '/conversation/:other',
+      path: '/conversations/:other',
       name: 'Conversation',
       component: Conversation
     },

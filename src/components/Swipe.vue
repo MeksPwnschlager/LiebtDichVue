@@ -6,7 +6,7 @@
         <QuoteCard :quote="quote" byLine="true"></QuoteCard>
       </div>
       <div class="mt-4">
-        <v-btn class="white--text" right color="green" @click="nextQuote()">MESSAGE</v-btn>
+        <v-btn class="white--text" right color="green" :to="`/conversations/${quote.name}`">MESSAGE</v-btn>
         <v-btn left @click="nextQuote()">NEXT</v-btn>
       </div>
     </v-layout>

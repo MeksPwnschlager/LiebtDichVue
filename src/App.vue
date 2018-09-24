@@ -40,17 +40,8 @@ export default {
 </script>
 
 <style>
-div {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
 main {
   height: 100vh;
-}
-#nav-bar {
-  flex-direction: row;
 }
 #app {
   text-align: center;

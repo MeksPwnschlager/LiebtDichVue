@@ -4,7 +4,7 @@
       :key="conversation.other"
       avatar
       ripple
-      :to="`/conversation/${conversation.other}`">
+      :to="`/conversations/${conversation.other}`">
 
       <v-list-tile-content>
         <v-list-tile-title>
