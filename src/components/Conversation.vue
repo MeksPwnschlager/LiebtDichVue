@@ -48,9 +48,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #conversation {
-  display: block;
+  display: flex;
 }
 #messages {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 </style>

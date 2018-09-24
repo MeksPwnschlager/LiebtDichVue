@@ -40,6 +40,18 @@ export default {
 </script>
 
 <style>
+div {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+main {
+  height: 100vh;
+}
+#nav-bar {
+  flex-direction: row;
+}
 #app {
   text-align: center;
   color: #2c3e50;
@@ -47,6 +59,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 .container {
   background: white;
