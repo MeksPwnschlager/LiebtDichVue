@@ -10,10 +10,12 @@
         v-model="username">
       </v-text-field>
       <v-text-field
+        type="password"
         label="Password"
         v-model="password">
       </v-text-field>
       <v-text-field
+        type="password"
         label="Confirm Password"
         v-model="confirm_password">
       </v-text-field>

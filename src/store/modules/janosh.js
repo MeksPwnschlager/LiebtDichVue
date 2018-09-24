@@ -50,7 +50,7 @@ const actions = {
         commit(mutationTypes.NOTIFY, 'Successful')
         Vue.localStorage.set('session', value.split(':')[1])
         log.success('JANOSH', 'Updated session key.')
-        router.push('/')
+        router.push('/account')
       } else if (value === 'session-invalid') {
         log.error('JANOSH', 'Session invalid.')
         commit(mutationTypes.NOTIFY, 'Session has expired')
