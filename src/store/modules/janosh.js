@@ -45,7 +45,7 @@ const actions = {
 
     Vue.janosh.onReceive((value) => {
       if (value === 'auth') {
-        dispatch(actionTypes.JANOSH_LOGIN, {redirect: 'welcome'})
+        dispatch(actionTypes.JANOSH_LOGIN, {redirect: '/'})
       } else if (value.startsWith('register-success:') || value.startsWith('login-success:')) {
         commit(mutationTypes.NOTIFY, 'Successful')
         Vue.localStorage.set('session', value.split(':')[1])

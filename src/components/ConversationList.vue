@@ -1,6 +1,6 @@
 <template>
   <LoadingScreen id="conversation-list" :data="conversationsObject">
-    <v-list two-line height="100%">
+    <v-list two-line>
       <ConversationPreview
         v-for="(conversation, index) in conversations"
         :conversation="conversation"
@@ -39,6 +39,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .v-list {
-  width: 100%
+  width: 100%;
+  overflow-y: scroll;
+  display: block;
+  height: 100%;
 }
 </style>

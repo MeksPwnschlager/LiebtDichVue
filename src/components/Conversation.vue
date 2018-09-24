@@ -1,8 +1,7 @@
 <template>
   <LoadingScreen id="conversation" :data="conversation">
     <v-layout column>
-
-    <v-layout id="messages" column justify-end>
+    <v-layout id="messages" class="pa-1" column justify-end>
       <Message
         v-for="(message, index) in conversation.messages"
         :key="index"
@@ -42,7 +41,8 @@ export default {
           'subject': '',
           'text': message,
           'recipient': this.conversation.other
-        }))
+        })
+      )
     }
   }
 }
@@ -53,5 +53,6 @@ export default {
 #messages {
   overflow-y: scroll;
   display: block;
+  height: 100%;
 }
 </style>

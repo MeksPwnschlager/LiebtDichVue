@@ -7,7 +7,7 @@ import ConversationList from '@/components/ConversationList.vue'
 import Conversation from '@/components/Conversation.vue'
 import Swipe from '@/components/Swipe.vue'
 import DevTools from '@/components/DevTools.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Welcome from '@/components/Welcome.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -15,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: HelloWorld
+      name: 'Welcome',
+      component: Welcome
     },
     {
       path: '/login',
