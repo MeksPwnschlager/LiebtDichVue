@@ -4,6 +4,7 @@
     v-model="message"
     append-icon="send"
     @click:append="send()"
+    @keyup="onKeyUp"
     placeholder="Message">
   </v-text-field>
 </template>
@@ -20,6 +21,11 @@ export default {
     send () {
       this.$emit('send', this.message)
       this.message = ''
+    },
+    onKeyUp (event) {
+      if (event.key === 'Enter') {
+        this.send()
+      }
     }
   }
 }

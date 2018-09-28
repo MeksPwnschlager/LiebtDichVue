@@ -3,15 +3,16 @@
     <NotificationBar></NotificationBar>
     <v-content>
       <v-container
+      class="pt-0 pb-0"
       fill-height
       justify-center>
-      <v-layout row>
-        <v-flex offset-xs3 xs6>
-          <LoadingScreen :data="ready">
-            <router-view/>
-          </LoadingScreen>
-        </v-flex>
-      </v-layout>
+        <v-layout row>
+          <v-flex offset-xs3 xs6>
+            <LoadingScreen :data="ready">
+              <router-view/>
+            </LoadingScreen>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
     <NavigationBar></NavigationBar>

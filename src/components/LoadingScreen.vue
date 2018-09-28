@@ -1,11 +1,18 @@
 <template>
-  <v-layout fill-height class="loading-screen">
+  <v-layout row justify-center fill-height class="loading-screen">
     <slot v-if="data"></slot>
     <div v-else>
-      <v-progress-circular
-        indeterminate
-        color="teal">
-      </v-progress-circular>
+      <v-layout
+        column
+        justify-center
+        fill-height>
+        <v-flex xs1>
+          <v-progress-circular
+            indeterminate
+            color="teal">
+          </v-progress-circular>
+        </v-flex>
+      </v-layout>
     </div>
   </v-layout>
 </template>
