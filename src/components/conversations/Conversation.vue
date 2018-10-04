@@ -16,8 +16,8 @@
 
 <script>
 import LoadingScreen from '@/components/LoadingScreen.vue'
-import Message from '@/components/Message.vue'
-import SendMessage from '@/components/SendMessage.vue'
+import Message from './Message.vue'
+import SendMessage from './SendMessage.vue'
 import * as mutationTypes from '@/store/mutationTypes.js'
 import { mapState } from 'vuex'
 

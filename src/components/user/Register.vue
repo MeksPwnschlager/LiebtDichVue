@@ -9,6 +9,11 @@
         label="Username"
         v-model="username">
       </v-text-field>
+      <v-select
+        v-model="gender"
+        :items="genders"
+        label="Gender">
+      </v-select>
       <v-text-field
         type="password"
         label="Password"
@@ -49,11 +54,20 @@ export default {
   name: 'Register',
   data () {
     return {
-      username: '',
-      password: '',
-      confirm_password: '',
-      email: '',
-      quote: ''
+      userdata: {
+        username: '',
+        gender: '',
+        password: '',
+        confirm_password: '',
+        email: '',
+        quote: ''
+      },
+      genders: [
+        { value: 'female', text: 'Female' },
+        { value: 'male', text: 'Male' },
+        { value: 'between', text: 'Something Inbetween' },
+        { value: 'else', text: 'Something Else' }
+      ]
     }
   },
   computed: {

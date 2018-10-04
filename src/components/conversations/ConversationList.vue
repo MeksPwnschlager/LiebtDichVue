@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import LoadingScreen from '@/components/LoadingScreen.vue'
-import ConversationPreview from '@/components/ConversationPreview.vue'
+import LoadingScreen from '../LoadingScreen.vue'
+import ConversationPreview from './ConversationPreview.vue'
 import { mapState } from 'vuex'
 
 export default {
